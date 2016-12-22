@@ -7,6 +7,8 @@ from appname import app
 
 
 db = SQLAlchemy(app)
+import appname.models
+
 migrate = Migrate(app, db)
 
 manager = Manager(app)
