@@ -8,7 +8,8 @@ from sqlalchemy import create_engine
 app = Flask(__name__)
 
 #db
-engine = create_engine('postgres://postgres:postgres@localhost:5432/testdb')
+app.config['SQLALCHEMY_DATABASE_URI'] = 'postgres://postgres:amdigit@localhost:5432/testdb'
+engine = create_engine(app.config['SQLALCHEMY_DATABASE_URI'])
 db = SQLAlchemy(app)
 
 from appname import models
